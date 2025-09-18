@@ -9,16 +9,24 @@ int main(void)
 
     int var;
     printf("Выберите функцию, которую вы хотите выполнить\n");
-    printf("1 - 1.2.1\n");
-    printf("2 - 1.2.4\n");
+    printf("\t 1 - 1.2.1\n");
+    printf("\t 2 - 1.2.4\n");
     scanf("%d", &var);
 
-    if (var == 1)
+    switch (var)
     {
+    case 1:
         function_1();
-    }
-    if (var == 2)
-    {
+        break;
+    case 2:
         function_2();
+        break;
+    // case 3:
+
+    default:
+        printf("Неверный выбор\n");
+        break;
     }
+
+    return 0;
 }
