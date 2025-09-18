@@ -35,6 +35,12 @@ int function_2(void)
     printf("Введите число n: \n");
     scanf("%d", &n);
 
+    if (n <= 0)
+    {
+        printf("Ошибка ввода\n");
+        return -1;
+    }
+
     for (int i=0; i < n; i++)
     {
         printf("Введите чисто a: \n");
@@ -53,5 +59,5 @@ int function_3(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-
+    return 0;
 }
