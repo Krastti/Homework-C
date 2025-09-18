@@ -30,7 +30,8 @@ int function_2(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    int n, sum = 0, a;
+    int n;
+    double sum = 0, a;
     printf("Подсчёт математического ожидания\n");
     printf("Введите число n: \n");
     scanf("%d", &n);
@@ -44,12 +45,12 @@ int function_2(void)
     for (int i=0; i < n; i++)
     {
         printf("Введите чисто a: \n");
-        scanf("%d", &a);
+        scanf("%lf", &a);
 
         sum += a;
     }
-    int M = sum / n;
-    printf("Получившиеся математическое ожидание: %d", M);
+    double M = sum / n;
+    printf("Получившиеся математическое ожидание: %lf", M);
 
     return 0;
 }
@@ -58,6 +59,32 @@ int function_3(void)
 {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+
+    int n;
+    double sumM = 0, sumD = 0, a;
+    printf("Вычисление дисперсии \n");
+    printf("Введите число n: \n");
+    scanf("%d", &n);
+
+    if (n <= 0)
+    {
+        printf("Ошибка ввода\n");
+        return -1;
+    }
+
+    // Вычисление мат. ожидания и дисперсии
+    for (int i=0, M; i < n; i++)
+    {
+        printf("Введите число a: \n");
+        scanf("%lf", &a);
+
+        sumM += a;
+        M = sumM / n;
+
+        sumD += (a - M) * (a - M);
+    }
+    double D = sumD / n;
+    printf("Получившаяся дисперсия: %lf", D);
 
     return 0;
 }

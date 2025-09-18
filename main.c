@@ -11,6 +11,7 @@ int main(void)
     printf("Выберите функцию, которую вы хотите выполнить\n");
     printf("\t 1 - 1.2.1\n");
     printf("\t 2 - 1.2.4\n");
+    printf("\t 3 - 1.2.5\n");
     scanf("%d", &var);
 
     switch (var)
@@ -21,8 +22,9 @@ int main(void)
     case 2:
         function_2();
         break;
-    // case 3:
-
+    case 3:
+        function_3();
+        break;
     default:
         printf("Неверный выбор\n");
         break;
