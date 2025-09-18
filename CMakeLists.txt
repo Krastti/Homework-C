@@ -11,4 +11,5 @@ add_executable(Homework_C
         .idea/workspace.xml
         LICENSE
         "1.2.1.c"
+        1.2.4.c
 )
