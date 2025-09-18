@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <windows.h>
 
-int main(void)
+int function_1(void)
 {
-    // Смена кодировки под UTF 8
     SetConsoleOutputCP(CP_UTF8);
 
     int n, a;
     int sum = 0 , i = 0;
+
 
     printf("Введите число: \n");
     scanf("%d", &n);
@@ -20,5 +20,14 @@ int main(void)
         sum += a;
     }
     printf("Получившаяся сумма = %d", sum);
+    return 0;
+}
+
+int function_2(void)
+{
+    // Смена кодировки под UTF 8
+    SetConsoleOutputCP(CP_UTF8);
+    printf("Hello world\n");
+
     return 0;
 }

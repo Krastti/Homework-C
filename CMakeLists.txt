@@ -10,6 +10,7 @@ add_executable(Homework_C
         .idea/vcs.xml
         .idea/workspace.xml
         LICENSE
-        "1.2.1.c"
-        "1.2.4.c"
+        "main.c"
+        functions.h
+        functions.c
 )
