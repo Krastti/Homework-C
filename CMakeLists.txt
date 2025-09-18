@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 4.0)
+project(Homework_C)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(Homework_C
+        .idea/.gitignore
+        .idea/Homework-C.iml
+        .idea/modules.xml
+        .idea/vcs.xml
+        .idea/workspace.xml
+        LICENSE
+        "Раздел 2/1.2.1.c"
+)
