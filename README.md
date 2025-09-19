@@ -187,7 +187,7 @@ flowchart TD
     M --> D
 ```
 ### Задание 1.2.43
-`` `mermaid
+``` mermaid
 flowchart TD
     A([Начало]) --> B[Инциализация i = 1 <br> Объявление переменной n, x, pred, count <br> flag=False]
     B --> C[/Ввести n/] --> D[/Ввести x/] --> F{Ввод завершен?}

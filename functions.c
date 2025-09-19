@@ -102,7 +102,7 @@ int function_4(void)
     int n = 0, z = 0, p = 0;
     int sum = 0;
 
-    while (scanf(%f), %x)
+    while (scanf("%d", &x))
     {
         if (x > 0)
         {
@@ -120,5 +120,117 @@ int function_4(void)
     }
     sum = p + z + n;
     printf("Получившаяся сумма: %d", sum);
+    return 0;
+}
+
+// 1.2.21
+int function_5(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.22
+int function_6(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.23
+int function_7(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.24
+int function_8(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.25
+int function_9(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.26
+int function_10(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.27
+int function_11(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.2.43
+int function_12(void)
+{
+    // Смена кодировки
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    int i = 1, count = 0;
+    int n, x;
+    int flag = 0;
+
+    printf("Введите n: \n");
+    scanf("%d", &n);
+    printf("Начните ввод последовательности.\n");
+    scanf("%d", &x);
+    int pred = x;
+    printf("Чтобы закончить ввод последовательности, введите Q\n");
+    while (scanf("%d", &x))
+    {
+        if (x == pred)
+        {
+            if (flag == 1)
+            {
+                i++;
+            }
+            else
+            {
+                flag = 1;
+                pred = x;
+                i++;
+            }
+        }
+        else
+        {
+            if (i >= n)
+            {
+                count++;
+            }
+            else
+            {
+                i = 1;
+                flag = 0;
+            }
+        }
+    }
+    printf("Число участков последовательности не меньше n: %d", count);
     return 0;
 }
