@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 
+// № 1.2.1
 int function_1(void)
 {
     SetConsoleOutputCP(CP_UTF8);
@@ -24,6 +25,7 @@ int function_1(void)
     return 0;
 }
 
+// № 1.2.4
 int function_2(void)
 {
     // Смена кодировки под UTF 8
@@ -55,6 +57,7 @@ int function_2(void)
     return 0;
 }
 
+// 1.2.5
 int function_3(void)
 {
     SetConsoleOutputCP(CP_UTF8);
@@ -86,5 +89,36 @@ int function_3(void)
     double D = sumD / n;
     printf("Получившаяся дисперсия: %lf", D);
 
+    return 0;
+}
+
+// 1.2.8
+int function_4(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    int x;
+    int n = 0, z = 0, p = 0;
+    int sum = 0;
+
+    while (scanf(%f), %x)
+    {
+        if (x > 0)
+        {
+            p += 1;
+        } else
+        {
+            if (x < 0)
+            {
+                n += 1;
+            } else
+            {
+                z += 1;
+            }
+        }
+    }
+    sum = p + z + n;
+    printf("Получившаяся сумма: %d", sum);
     return 0;
 }

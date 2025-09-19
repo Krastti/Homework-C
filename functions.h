@@ -4,5 +4,6 @@
 int function_1(void);
 int function_2(void);
 int function_3(void);
+int function_4(void);
 
 #endif //HOMEWORK_C_FUNCTIONS_H
