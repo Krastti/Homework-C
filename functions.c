@@ -1,6 +1,27 @@
 #include <stdio.h>
 #include <windows.h>
 
+// Функция возведения в степень
+int power_int(int base, int exponent) {
+    if (exponent == 0) return 1;
+    if (base == 0) return 0;
+
+    if (exponent < 0) {
+        base = 1 / base;
+        exponent = -exponent;
+    }
+
+    int result = 1;
+    while (exponent > 0) {
+        if (exponent % 2 == 1) {
+            result *= base;
+        }
+        base *= base;
+        exponent /= 2;
+    }
+    return result;
+}
+
 // № 1.2.1
 int function_1(void)
 {
@@ -182,6 +203,31 @@ int function_11(void)
 {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+
+    int min = power_int(10, 6);
+    int i = 1;
+    int first_min = 1, last_min = 1, n;
+
+    printf("Введите n: \n");
+    while (scanf("%d", &n))
+    {
+        if (n < min)
+        {
+            min = n;
+            first_min = i;
+            last_min = i;
+            i += 1;
+        }
+        else if (n == min)
+        {
+            last_min = i;
+            i += 1;
+        } else
+        {
+            i += 1;
+        }
+    }
+    printf("Первый и последний: %d, %d", first_min, last_min);
 
     return 0;
 }
