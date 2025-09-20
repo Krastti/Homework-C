@@ -193,15 +193,20 @@ int function_12(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    // Объявление и инициализация переменных
     int i = 1, count = 0;
     int n, x;
     int flag = 0;
 
+    // Начало программы
     printf("Введите n: \n");
     scanf("%d", &n);
+
     printf("Начните ввод последовательности.\n");
     scanf("%d", &x);
-    int pred = x;
+
+    int pred = x; // pred от слова предыдущий
+
     printf("Чтобы закончить ввод последовательности, введите Q\n");
     while (scanf("%d", &x))
     {
@@ -209,27 +214,35 @@ int function_12(void)
         {
             if (flag == 1)
             {
-                i++;
+                i += 1;
+                pred = x;
             }
             else
             {
                 flag = 1;
                 pred = x;
-                i++;
+                i += 1;
             }
         }
         else
         {
             if (i >= n)
             {
-                count++;
+                i = 1;
+                count += 1;
+                pred = x;
             }
             else
             {
                 i = 1;
                 flag = 0;
+                pred = x;
             }
         }
+    }
+    if (i >= n)
+    {
+        count += 1;
     }
     printf("Число участков последовательности не меньше n: %d", count);
     return 0;
