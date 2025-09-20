@@ -155,9 +155,11 @@ int function_5(void)
     SetConsoleCP(CP_UTF8);
 
     int x, i = 0;
+    printf("Сколько раз встречается первый элемент в последовательности\n");
     printf("Введите x \n");
     scanf("%d", &x);
-    int res = x;
+    const int res = x;
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &x))
     {
         if (x == res)
@@ -165,7 +167,7 @@ int function_5(void)
             i += 1;
         }
     }
-    printf("%d", i);
+    printf("Сумма эленентов в последовательности равная первому элементу: %d", i);
     return 0;
 }
 
@@ -178,7 +180,7 @@ int function_6(void)
     int x, i = 0;
     printf("Введите x: \n");
     scanf("%d", &x);
-    int res = x;
+    const int res = x;
     while  (scanf("%d", &x))
     {
         if (x == res)
@@ -342,7 +344,7 @@ int function_12(void)
 
     int pred = x; // pred от слова предыдущий
 
-    printf("Чтобы закончить ввод последовательности, введите Q\n");
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &x))
     {
         if (x == pred)
