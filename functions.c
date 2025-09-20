@@ -150,6 +150,18 @@ int function_5(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int x, i = 0;
+    printf("Введите x \n");
+    scanf("%d", &x);
+    int res = x;
+    while (scanf("%d", &x))
+    {
+        if (x == res)
+        {
+            i += 1;
+        }
+    }
+    printf("%d", i);
     return 0;
 }
 
@@ -159,6 +171,19 @@ int function_6(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int x, i = 0;
+    printf("Введите x: \n");
+    scanf("%d", &x);
+    int res = x;
+    while  (scanf("%d", &x))
+    {
+        if (x == res)
+        {
+            printf("%d", i);
+            break;
+        }
+        i += 1;
+    }
     return 0;
 }
 
@@ -168,6 +193,22 @@ int function_7(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int x, i = 0;
+    printf("Введите x: \n");
+    scanf("%d", &x);
+    int res = x;
+    while (scanf("%d", &x))
+    {
+        if (x == res)
+        {
+            i += 1;
+            res += 1;
+            printf("%d, %d", i, res);
+        } else
+        {
+            i += 1;
+        }
+    }
     return 0;
 }
 
@@ -177,6 +218,21 @@ int function_8(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int max = -1 * power_int(10, 6);
+    int min = power_int(10, 6);
+    int x;
+    printf("Введите x: \n");
+    while (scanf("%d", &x))
+    {
+        if (x > max)
+        {
+            max = x;
+        } else if (x < min)
+        {
+            min = x;
+        }
+    }
+    printf("Получившийся min и max: %d, %d", min, max);
     return 0;
 }
 
@@ -186,6 +242,18 @@ int function_9(void)
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int max = -1 * power_int(10, 6);
+    int pos = 0, i = 1, n;
+    printf("Введите n: ");
+    while (scanf("%d", &n))
+    {
+        if (n > max)
+        {
+            max = n;
+            pos = i;
+        }
+    }
+    printf("Получившийся pos: %d\n", pos);
     return 0;
 }
 
@@ -194,6 +262,23 @@ int function_10(void)
 {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+
+    int min = power_int(10, 6);
+    int i = 1, count = 1, n;
+    printf("Введите n: ");
+    while (scanf("%d", &n))
+    {
+        if (n == min)
+        {
+            count++;
+        }
+        else if (n < min)
+        {
+            min = n;
+            count = 1;
+        }
+    }
+    printf("Получившийся count: %d \n", count);
 
     return 0;
 }
