@@ -21,6 +21,7 @@ int main(void)
     printf("\t 10 - 1.2.26\n");
     printf("\t 11 - 1.2.27\n");
     printf("\t 12 - 1.2.43\n");
+    printf("Выбор функции: ");
     scanf("%d", &var);
 
     switch (var)
