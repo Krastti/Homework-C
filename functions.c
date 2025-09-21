@@ -281,8 +281,10 @@ int function_10(void)
     SetConsoleCP(CP_UTF8);
 
     int min = power_int(10, 6);
-    int i = 1, count = 1, n;
-    printf("Введите n: ");
+    int count = 1, n;
+    printf("Опрделение количества чисел, равных минимуму.\n");
+    printf("Введите n: \n");
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &n))
     {
         if (n == min)
@@ -295,7 +297,7 @@ int function_10(void)
             count = 1;
         }
     }
-    printf("Получившийся count: %d \n", count);
+    printf("Количество чисел, равных минимуму: %d \n", count);
 
     return 0;
 }
@@ -307,10 +309,10 @@ int function_11(void)
     SetConsoleCP(CP_UTF8);
 
     int min = power_int(10, 6);
-    int i = 1;
-    int first_min = 1, last_min = 1, n;
-
+    int i = 1, first_min = 1, last_min = 1, n;
+    printf("Определение номера первого и последнего минимального элемента последовательности.\n");
     printf("Введите n: \n");
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &n))
     {
         if (n < min)
@@ -329,7 +331,7 @@ int function_11(void)
             i += 1;
         }
     }
-    printf("Первый и последний: %d, %d", first_min, last_min);
+    printf("Первый и последний минимальный элемент последовательности: %d, %d", first_min, last_min);
 
     return 0;
 }
