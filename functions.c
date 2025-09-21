@@ -233,7 +233,9 @@ int function_8(void)
     int max = -1 * power_int(10, 6);
     int min = power_int(10, 6);
     int x;
+    printf("Определение максимума и минимума последовательности.\n");
     printf("Введите x: \n");
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &x))
     {
         if (x > max)
@@ -256,7 +258,9 @@ int function_9(void)
 
     int max = -1 * power_int(10, 6);
     int pos = 0, i = 1, n;
-    printf("Введите n: ");
+    printf("Определение порядкового номера первого числа равного максимуму.\n");
+    printf("Введите n: \n");
+    printf("Чтобы закончить ввод последовательности, введите q\n");
     while (scanf("%d", &n))
     {
         if (n > max)
@@ -264,6 +268,7 @@ int function_9(void)
             max = n;
             pos = i;
         }
+        i++;
     }
     printf("Получившийся pos: %d\n", pos);
     return 0;
