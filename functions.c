@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
+#include <stdlib.h>
+#include <time.h>
 
 // Функция возведения в степень
 int power_int(int base, int exponent) {
@@ -20,6 +22,25 @@ int power_int(int base, int exponent) {
         exponent /= 2;
     }
     return result;
+}
+
+// Функиця для генерации рандомного массива
+double* generate_random_array(int size, double min_val, double max_val) {
+    if (size <= 0) return NULL;
+
+    double* arr = (double*)malloc(size * sizeof(double));
+    if (arr == NULL) return NULL;
+
+    // Инициализация генератора случайных чисел
+    srand(time(NULL));
+
+    for (int i = 0; i < size; i++) {
+        // Генерация случайного числа в заданном диапазоне
+        double random_value = ((double)rand() / RAND_MAX) * (max_val - min_val) + min_val;
+        arr[i] = random_value;
+    }
+
+    return arr;
 }
 
 // № 1.2.1
