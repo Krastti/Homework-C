@@ -13,4 +13,6 @@ add_executable(Homework_C
         "main.c"
         functions.h
         functions.c
+        homework.c
+        homework.h
 )
