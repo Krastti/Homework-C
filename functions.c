@@ -32,7 +32,7 @@ int generate_random_size()
     return size;
 }
 
-// Функиця для генерации рандомного массива
+// Функиця для генерации вещественного рандомного массива
 double* generate_random_array(int size, double min_val, double max_val) {
     if (size <= 0) return NULL;
 
@@ -47,7 +47,24 @@ double* generate_random_array(int size, double min_val, double max_val) {
         double random_value = ((double)rand() / RAND_MAX) * (max_val - min_val) + min_val;
         arr[i] = random_value;
     }
+    return arr;
+}
 
+// Функция для генерации целочисленного рандомного массива
+int* generate_int_random_array(int size, int min_val, int max_val)
+{
+    if (size <= 0) return NULL;
+
+    int* arr = (int*)malloc(size * sizeof(int));
+    if (arr == NULL) return NULL;
+
+    srand(time(NULL));
+
+    for (int i = 0; i < size; i++)
+    {
+        int random_value = ((int)rand() / RAND_MAX) * (max_val - min_val) + min_val;
+        arr[i] = random_value;
+    }
     return arr;
 }
 
