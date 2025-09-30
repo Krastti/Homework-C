@@ -24,6 +24,14 @@ int power_int(int base, int exponent) {
     return result;
 }
 
+// Функция для генерации рандомного размера массива
+int generate_random_size()
+{
+    srand(time(NULL));
+    int size = 5 + rand() % 10;
+    return size;
+}
+
 // Функиця для генерации рандомного массива
 double* generate_random_array(int size, double min_val, double max_val) {
     if (size <= 0) return NULL;
@@ -424,21 +432,26 @@ int function_13(void)
 {
     SetConsoleCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
-    int size = 8;
-    double min_val = 1.0;
-    double max_val = 10.0;
+    int size = generate_random_size();
+    const double min_val = 1.0;
+    const double max_val = 50.0;
 
     double* arr = generate_random_array(size, min_val, max_val);
 
     if (arr != NULL)
     {
-        for (int i = 0; i < size; i++)
-        {
-            printf("%lf\n", arr[i]);
-        }
+        printf("%lf\n", arr[0]);
+        double pred = arr[0];
+        for (int i = 1; i < size - 1; i++)
+            {
+            const int current = arr[i];
+            arr[i] = (pred + arr[i]) / 2;
+            printf("%lf, %d\n", arr[i], i);
+            pred = current;
+            }
+        printf("%lf\n", arr[size - 1]);
         free(arr);
     }
-
     return 0;
 }
 
