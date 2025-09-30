@@ -10,6 +10,7 @@ int main(void)
     int var;
     printf("Выберите домашнюю работу:\n");
     printf("\t 1 - Домашняя работа 1\n");
+    printf("\t 2 - Домашняя работа 2\n");
     printf("Выбор домашней работы: ");
     scanf("%d", &var);
 
@@ -17,6 +18,9 @@ int main(void)
     {
     case 1:
         homework_1();
+        break;
+    case 2:
+        homework_2();
         break;
     default:
         printf("Неверный выбор\n");

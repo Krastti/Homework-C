@@ -424,6 +424,20 @@ int function_13(void)
 {
     SetConsoleCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+    int size = 8;
+    double min_val = 1.0;
+    double max_val = 10.0;
+
+    double* arr = generate_random_array(size, min_val, max_val);
+
+    if (arr != NULL)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            printf("%lf\n", arr[i]);
+        }
+        free(arr);
+    }
 
     return 0;
 }
