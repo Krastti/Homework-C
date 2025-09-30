@@ -397,3 +397,39 @@ int function_12(void)
     printf("Число участков последовательности не меньше n: %d", count);
     return 0;
 }
+
+// 1.3.10
+int function_13(void)
+{
+    SetConsoleCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.3.15
+int function_14(void)
+{
+    SetConsoleCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.3.19
+int function_15(void)
+{
+    SetConsoleCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}
+
+// 1.3.27
+int function_16(void)
+{
+    SetConsoleCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    return 0;
+}

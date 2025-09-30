@@ -69,3 +69,37 @@ int homework_1(void)
 
     return 0;
 }
+
+int homework_2(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int var;
+    printf("Выберите функцию, которую хотите выполнить.\n");
+    printf("\t1 - 1.3.10\n");
+    printf("\t2 - 1.3.15\n");
+    printf("\t3 - 1.3.19\n");
+    printf("\t4 - 1.3.27\n");
+    printf("Выбор функции: ");
+    scanf("%d", &var);
+
+    switch (var)
+    {
+        case 1:
+            function_13();
+            break;
+        case 2:
+            function_14();
+            break;
+        case 3:
+            function_15();
+            break;
+        case 4:
+            function_16();
+            break;
+        default:
+            printf("Неверный выбор\n");
+            break;
+    }
+    return 0;
+}
