@@ -32,7 +32,7 @@ int generate_random_size()
     return size;
 }
 
-// Функиця для генерации вещественного рандомного массива
+// Функция для генерации вещественного рандомного массива
 double* generate_random_array(int size, double min_val, double max_val) {
     if (size <= 0) return NULL;
 
@@ -62,7 +62,7 @@ int* generate_int_random_array(int size, int min_val, int max_val)
 
     for (int i = 0; i < size; i++)
     {
-        int random_value = ((int)rand() / RAND_MAX) * (max_val - min_val) + min_val;
+        int random_value = rand() % (max_val - min_val + 1) + min_val;
         arr[i] = random_value;
     }
     return arr;
@@ -463,7 +463,7 @@ int function_13(void)
             {
             const int current = arr[i];
             arr[i] = (pred + arr[i]) / 2;
-            printf("%lf, %d\n", arr[i], i);
+            printf("%lf", arr[i]);
             pred = current;
             }
         printf("%lf\n", arr[size - 1]);
@@ -476,7 +476,80 @@ int function_13(void)
 int function_14(void)
 {
     SetConsoleCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
+    int size = generate_random_size();
+    const int min_val = 1;
+    const int max_val = 50;
+
+    int* arr_1 = generate_int_random_array(size, min_val, max_val);
+    Sleep(1000);
+    int* arr_2 = generate_int_random_array(size, min_val, max_val);
+    int* arr_3 = (int*)malloc(size * sizeof(int));
+
+    int res = 0;
+
+    printf("Первый массив: ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr_1[i]);
+    }
+    printf("\n");
+
+    printf("Второй массив: ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr_2[i]);
+    }
+    printf("\n");
+
+    for (int i = 0; i < size; i++)
+    {
+        int is_duplicate_in_arr1 = 0;
+        for (int k = 0; k < i; k++)
+        {
+            if (arr_1[k] == arr_1[i])
+            {
+                is_duplicate_in_arr1 = 1;
+                break;
+            }
+        }
+        if (is_duplicate_in_arr1) continue;
+
+        for (int j = 0; j < size; j++)
+        {
+            if (arr_1[i] == arr_2[j])
+            {
+                int already_added = 0;
+                for (int k = 0; k < res; k++)
+                {
+                    if (arr_3[k] == arr_1[i])
+                    {
+                        already_added = 1;
+                        break;
+                    }
+                }
+
+                if (!already_added)
+                {
+                    arr_3[res] = arr_1[i];
+                    res += 1;
+                }
+                break;
+            }
+        }
+    }
+
+    printf("Пересечение массивов (длина = %d): ", res);
+    for (int i = 0; i < res; i++)
+    {
+        printf("%d ", arr_3[i]);
+    }
+    printf("\n");
+
+    free(arr_1);
+    free(arr_2);
+    free(arr_3);
 
     return 0;
 }
