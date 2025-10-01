@@ -449,26 +449,35 @@ int function_13(void)
 {
     SetConsoleCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
-    int size = generate_random_size();
+
+    const int size = generate_random_size();
     const double min_val = 1.0;
     const double max_val = 50.0;
 
     double* arr = generate_random_array(size, min_val, max_val);
 
-    if (arr != NULL)
+    printf("Первозданный массив: \n");
+    for (int i = 0; i < size; i++)
     {
-        printf("%lf\n", arr[0]);
-        double pred = arr[0];
-        for (int i = 1; i < size - 1; i++)
-            {
-            const int current = arr[i];
-            arr[i] = (pred + arr[i]) / 2;
-            printf("%lf", arr[i]);
-            pred = current;
-            }
-        printf("%lf\n", arr[size - 1]);
-        free(arr);
+        printf("%lf, %d\n", arr[i], i);
     }
+    printf("\n");
+
+    double pred = arr[0];
+    for (int i = 1; i < size - 1; i++)
+    {
+        const int current = arr[i];
+
+        arr[i] = (pred + arr[i]) / 2;
+        pred = current;
+    }
+    printf("Изменённый массив: \n");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%lf, %d\n", arr[i], i);
+    }
+    free(arr);
+
     return 0;
 }
 
@@ -505,17 +514,6 @@ int function_14(void)
 
     for (int i = 0; i < size; i++)
     {
-        int is_duplicate_in_arr1 = 0;
-        for (int k = 0; k < i; k++)
-        {
-            if (arr_1[k] == arr_1[i])
-            {
-                is_duplicate_in_arr1 = 1;
-                break;
-            }
-        }
-        if (is_duplicate_in_arr1) continue;
-
         for (int j = 0; j < size; j++)
         {
             if (arr_1[i] == arr_2[j])
@@ -575,9 +573,11 @@ int function_15(void)
 
     int actual_index = 1;
 
+    int flag;
+
     for (int i = 1; i < size; i++)
     {
-        int flag = 0;
+        flag = 0;
         for (int j = 0; j < actual_index; j++)
         {
             if (arr[i] == arr[j])
