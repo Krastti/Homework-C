@@ -574,14 +574,13 @@ int function_15(void)
     printf("\n");
 
     int actual_index = 1;
-    int x;
 
-    int flag = 0;
     for (int i = 1; i < size; i++)
     {
-        for (int j = 0; j < size; j++)
+        int flag = 0;
+        for (int j = 0; j < actual_index; j++)
         {
-            if (x == arr[j])
+            if (arr[i] == arr[j])
             {
                 flag = 1;
                 break;
@@ -589,7 +588,7 @@ int function_15(void)
         }
         if (!flag)
         {
-            arr[actual_index] = x;
+            arr[actual_index] = arr[i];
             actual_index += 1;
         }
     }
