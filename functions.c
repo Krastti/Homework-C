@@ -28,7 +28,7 @@ int power_int(int base, int exponent) {
 int generate_random_size()
 {
     srand(time(NULL));
-    int size = 5 + rand() % 10;
+    int size = 10 + rand() % 20;
     return size;
 }
 
@@ -560,6 +560,45 @@ int function_15(void)
     SetConsoleCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    const int size = generate_random_size();
+    const double min_val = 1.0;
+    const double max_val = 50.0;
+
+    int* arr = generate_int_random_array(size, min_val, max_val);
+
+    printf("Первозданный массив: ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    int actual_index = 1;
+    int x;
+
+    int flag = 0;
+    for (int i = 1; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (x == arr[j])
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (!flag)
+        {
+            arr[actual_index] = x;
+            actual_index += 1;
+        }
+    }
+    printf("Уплотненный массив: ");
+    for (int i = 0; i < actual_index; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    free(arr);
     return 0;
 }
 
