@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
-#include "functions.h"
+#include "Homework 1/functions.h"
+#include "Homework 2/functions.h"
 
 int homework_1(void)
 {
