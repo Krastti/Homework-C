@@ -81,6 +81,7 @@ int homework_2(void)
     printf("\t2 - 1.3.15\n");
     printf("\t3 - 1.3.19\n");
     printf("\t4 - 1.3.27\n");
+    printf("\t5 - Быстрая сортировка\n");
     printf("Выбор функции: ");
     scanf("%d", &var);
 
@@ -97,6 +98,9 @@ int homework_2(void)
             break;
         case 4:
             function_16();
+            break;
+        case 5:
+            qu_sort();
             break;
         default:
             printf("Неверный выбор\n");

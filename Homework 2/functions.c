@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Функция для генерации рандомного размера массива
+// Функция для генерации случайного размера массива
 int generate_random_size()
 {
     srand(time(NULL));
@@ -11,7 +11,7 @@ int generate_random_size()
     return size;
 }
 
-// Функция для генерации вещественного рандомного массива
+// Функция для генерации вещественного случайного массива
 double* generate_random_array(int size, double min_val, double max_val) {
     if (size <= 0) return NULL;
 
@@ -29,7 +29,7 @@ double* generate_random_array(int size, double min_val, double max_val) {
     return arr;
 }
 
-// Функция для генерации целочисленного рандомного массива
+// Функция для генерации целочисленного случайного массива
 int* generate_int_random_array(int size, int min_val, int max_val)
 {
     if (size <= 0) return NULL;
@@ -216,7 +216,7 @@ int function_16(void)
     printf("Введите степень N для треугольника: ");
     scanf("%d", &N);
 
-    int trig[N + 1];
+    int* trig = (int*)malloc((N + 1) * sizeof(int));
 
     trig[0] = 1;
     for (int i = 1; i <= N; i++)
@@ -237,6 +237,84 @@ int function_16(void)
         printf("%d ", trig[i]);
     }
     printf("\n");
+    free(trig);
+    return 0;
+}
 
+// Quick sorted - алгоритм быстрой сортировки
+// Swap - функция обмена двух переменных
+void swap(int* a, int* b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Partition - функция для разделения массива
+int partition(int arr[], int left, int right)
+{
+    int pivot = arr[right];
+
+    int i = (left - 1);
+
+    for (int j = left; j < right; j++)
+    {
+        if (arr[j] <= pivot)
+        {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[right]);
+    return i + 1;
+}
+
+void quick_sort(int arr[], int left, int right)
+{
+    if (left < right)
+    {
+        int pi = partition(arr, left, right);
+
+        quick_sort(arr, left, pi - 1);
+        quick_sort(arr, pi + 1, right);
+    }
+}
+
+int qu_sort()
+{
+    int size;
+    printf("Введите размер сортируемого массива:\n");
+    scanf("%d", &size);
+
+    const int min_val = 1;
+    const int max_val = 50000;
+
+    int* arr = generate_int_random_array(size, min_val, max_val);
+
+    /*
+    printf("Исходный массив:\n");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    */
+    clock_t begin = clock();
+
+    quick_sort(arr, 0, size - 1);
+
+    clock_t end = clock();
+    /*
+    printf("Отсортированный массив\n");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    */
+    free(arr);
+
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("Время выполнения: %.10f секунд\n", time_spent);
     return 0;
 }
