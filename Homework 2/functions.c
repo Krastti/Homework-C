@@ -212,5 +212,31 @@ int function_16(void)
     SetConsoleCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
+    int N;
+    printf("Введите степень N для треугольника: ");
+    scanf("%d", &N);
+
+    int trig[N + 1];
+
+    trig[0] = 1;
+    for (int i = 1; i <= N; i++)
+    {
+        trig[i] = 0;
+    }
+
+    for (int i = 1; i <= N; i++)
+    {
+        for (int j = i; j > 0; j--)
+        {
+            trig[j] += trig[j - 1];
+        }
+    }
+
+    for (int i = 0; i <= N; i++)
+    {
+        printf("%d ", trig[i]);
+    }
+    printf("\n");
+
     return 0;
 }
