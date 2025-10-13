@@ -254,7 +254,6 @@ void swap(int* a, int* b)
 int partition(int arr[], int left, int right)
 {
     int pivot = arr[right];
-
     int i = (left - 1);
 
     for (int j = left; j < right; j++)

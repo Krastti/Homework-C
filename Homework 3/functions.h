@@ -1,0 +1,4 @@
+#ifndef HOMEWORK_C_FUNCTIONS_H
+#define HOMEWORK_C_FUNCTIONS_H
+int function_17(void);
+#endif //HOMEWORK_C_FUNCTIONS_H

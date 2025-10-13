@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "Homework 1/functions.h"
 #include "Homework 2/functions.h"
+#include "Homework 3/functions.h"
 
 int homework_1(void)
 {
@@ -101,6 +102,27 @@ int homework_2(void)
             break;
         case 5:
             qu_sort();
+            break;
+        default:
+            printf("Неверный выбор\n");
+            break;
+    }
+    return 0;
+}
+
+int homework_3(void)
+{
+    SetConsoleOutputCP(CP_UTF8);
+
+    int var;
+    printf("Выберите функцию, которую хотите выполнить.\n");
+    printf("\tЗадание 1\n");
+    scanf("%d", &var);
+
+    switch (var)
+    {
+        case 1:
+            function_17();
             break;
         default:
             printf("Неверный выбор\n");
