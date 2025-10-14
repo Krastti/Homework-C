@@ -117,6 +117,11 @@ int homework_3(void)
     int var;
     printf("Выберите функцию, которую хотите выполнить.\n");
     printf("\tЗадание 1\n");
+    printf("\tЗадание 2\n");
+    printf("\tЗадание 3\n");
+    printf("\tЗадание 4\n");
+    printf("\tЗадание 5\n");
+    printf("\tЗадание 6\n");
     scanf("%d", &var);
 
     switch (var)
@@ -126,6 +131,18 @@ int homework_3(void)
             break;
         case 2:
             function_18();
+            break;
+        case 3:
+            function_19();
+            break;
+        case 4:
+            function_20();
+            break;
+        case 5:
+            function_21();
+            break;
+        case 6:
+            function_22();
             break;
         default:
             printf("Неверный выбор\n");

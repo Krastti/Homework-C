@@ -6,4 +6,8 @@
 #define HOMEWORK_C_FUNCTIONS_3_H
 int function_17(void);
 int function_18(void);
+int function_19(void);
+int function_20(void);
+int function_21(void);
+int function_22(void);
 #endif //HOMEWORK_C_FUNCTIONS_3_H
