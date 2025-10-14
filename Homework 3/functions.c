@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
-#include <time.h>
 
 int function_17(void) // Задание 1
 {
