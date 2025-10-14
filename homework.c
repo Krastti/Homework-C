@@ -124,6 +124,9 @@ int homework_3(void)
         case 1:
             function_17();
             break;
+        case 2:
+            function_18();
+            break;
         default:
             printf("Неверный выбор\n");
             break;

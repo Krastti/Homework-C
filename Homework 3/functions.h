@@ -1,4 +1,9 @@
-#ifndef HOMEWORK_C_FUNCTIONS_H
-#define HOMEWORK_C_FUNCTIONS_H
+//
+// Created by Ярослав on 14.10.2025.
+//
+
+#ifndef HOMEWORK_C_FUNCTIONS_3_H
+#define HOMEWORK_C_FUNCTIONS_3_H
 int function_17(void);
-#endif //HOMEWORK_C_FUNCTIONS_H
+int function_18(void);
+#endif //HOMEWORK_C_FUNCTIONS_3_H
